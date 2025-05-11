@@ -1,0 +1,293 @@
+/* Global Variables */
+:root {
+    --primary-color: rgb(1, 161, 1);
+    --secondary-color: rgb(1, 99, 1);
+    --text-color: white;
+    --background-color: black;
+    --font-family: 'Poppins', sans-serif;
+    --transition-speed: 0.3s;
+}
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-family);
+}
+
+body {
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--primary-color);
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/***************************** Navigation Bar *****************************/
+.navbar {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.logo a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: var(--text-color);
+}
+
+.logo h1 span {
+    color: var(--primary-color);
+}
+
+.menu {
+    flex: 1;
+    text-align: right;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu ul li {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.menu ul li a {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text-color);
+    transition: color var(--transition-speed);
+}
+
+.menu ul li a:hover {
+    color: var(--primary-color);
+}
+
+.menuicon {
+    display: none;
+    font-size: 24px;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+/* Mobile Navigation */
+@media only screen and (max-width: 768px) {
+    .navbar {
+        background-color: var(--background-color);
+    }
+
+    .menu {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: var(--background-color);
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height var(--transition-speed) ease-in-out;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .menu ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 20px 0;
+    }
+
+    .menu ul li {
+        display: block;
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .menuicon {
+        display: block;
+    }
+}
+
+/***************************** Cover Section *****************************/
+.cover {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('https://source.unsplash.com/1600x900/?donate,charity,child,study') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.cover .information {
+    max-width: 800px;
+    padding: 20px;
+}
+
+.cover .information h1 {
+    font-size: 50px;
+    margin: 10px 0;
+}
+
+.cover .information h1 span {
+    color: var(--primary-color);
+    font-size: 70px;
+}
+
+.cover .information h3 {
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.cover .information h3 span {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.cover .information h2 {
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+.cover .information a button {
+    padding: 10px 30px;
+    margin: 10px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.cover .information a button:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+/* Mobile View */
+@media only screen and (max-width: 700px) {
+    .cover .information h1 span {
+        font-size: 70px;
+    }
+
+    .information h2 {
+        font-size: 30px;
+    }
+}
+
+/***************************** About Section *****************************/
+.about {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 60px 20px;
+    background-color: #f8f9fa;
+    color: black;
+}
+
+.about .imgcontainer {
+    flex: 1;
+    min-width: 300px;
+    margin: 0 auto;
+    background: url('/images/child.jpg') no-repeat center center/cover;
+    height: 350px;
+}
+
+.about .aboutcontent {
+    flex: 1;
+    padding: 40px;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.aboutcontent h5 {
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.aboutcontent h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.aboutcontent p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.aboutcontent a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.aboutcontent a:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+/* Mobile View */
+@media only screen and (max-width: 700px) {
+    .about {
+        flex-direction: column;
+    }
+
+    .about .imgcontainer {
+        margin-bottom: 20px;
+    }
+}
+
+/***************************** Footer *****************************/
+footer {
+    background-color: var(--background-color);
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+}
+
+footer a {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: var(--primary-color);
+}
